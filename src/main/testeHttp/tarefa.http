@@ -1,0 +1,44 @@
+@url = http://localhost:8080
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgSm9nb3MiLCJzdWIiOiJ1c2VyIiwiZXhwIjoxNzI2MDA1MDI5fQ.lPJasbcXb88b1lr3BVZ_Rx5ms_s_iF1oFGF7rwRIjL8
+
+###
+GET {{url}}/tarefas
+Authorization: Bearer {{token}}
+
+###
+GET {{url}}/tarefas/1
+Authorization: Bearer {{token}}
+
+###
+POST {{url}}/tarefas
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "titulo": "Título",
+    "descricao": "Descrição",
+    "dataInicio": "2024-11-18",
+    "dataConclusao": "2024-11-30"
+}
+
+###
+PUT {{url}}/tarefas/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "titulo": "Título - Alterado"
+}
+
+###
+DELETE {{url}}/tarefas/1
+Authorization: Bearer {{token}}
+
+###
+POST {{url}}/tarefas/1/colaboradores/1
+Authorization: Bearer {{token}}
+
+###
+DELETE {{url}}/tarefas/1/colaboradores/1
+Authorization: Bearer {{token}}
